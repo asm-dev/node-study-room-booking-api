@@ -16,7 +16,10 @@ const options = {
       },
     ],
   },
-  apis: [], //TODO: Agregar ruta
+  apis: [
+    "./src/domain/booking/endpoints/*.ts",
+    "./src/domain/room/endpoints/*.ts",
+  ],
 };
 
 const swaggerSpec = swaggerJSDoc(options);

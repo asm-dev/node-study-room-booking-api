@@ -1,45 +1,18 @@
 openapi: 3.0.0
 info:
-  title: API de reservas de salas de estudio
+  title: API de reserva de salas
   version: 1.0.0
-  description: API para gestionar la disponibilidad y reservas de salas en una biblioteca o espacio de coworking.
+  description: API REST para la gestión de reserva de salas de una biblioteca ficticia
 servers:
   - url: http://localhost:3000
     description: Servidor de desarrollo
 
 paths:
-  /rooms:
-    get:
-      summary: Obtener todas las salas disponibles
-      description: Devuelve la lista de salas de estudio disponibles en la biblioteca.
-      tags:
-        - Salas
-      responses:
-        "200":
-          description: Lista de salas disponibles de la biblioteca
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    id:
-                      type: string
-                      description: Identificador único de la sala
-                    name:
-                      type: string
-                      description: Nombre de la sala
-                    capacity:
-                      type: integer
-                      description: Capacidad máxima de personas
-
   /reservations:
     get:
-      summary: Obtener todas las reservas activas
-      description: Devuelve una lista de todas las reservas actuales registradas en el sistema.
-      tags:
-        - Reservas
+      summary: Obtener todas las reservas
+      description: Devuelve todas las reservas activas del sistema.
+      tags: [Reservas]
       responses:
         "200":
           description: Lista de reservas activas en el sistema
@@ -48,20 +21,97 @@ paths:
               schema:
                 type: array
                 items:
-                  type: object
-                  properties:
-                    id:
-                      type: string
-                      description: Identificador único de la reserva
-                    roomId:
-                      type: string
-                      description: ID de la sala reservada
-                    user:
-                      type: string
-                      description: Nombre del usuario que ha hecho la reserva
-                    time:
-                      type: string
-                      description: Fecha y hora de la reserva (ISO 8601)
-                    people:
-                      type: integer
-                      description: Número de personas para la reserva
+                  $ref: "#/components/schemas/Booking"
+
+    post:
+      summary: Crear una nueva reserva
+      description: Registra una nueva reserva si cumple con las reglas de negocio.
+      tags: [Reservas]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Booking"
+      responses:
+        "201":
+          description: Reserva creada correctamente
+        "400":
+          description: Error en la validación o conflicto
+
+  /reservations/{id}:
+    get:
+      summary: Obtener una reserva por ID
+      description: Devuelve los detalles de una reserva específica.
+      tags: [Reservas]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Reserva encontrada
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Booking"
+        "404":
+          description: Reserva no encontrada
+
+    put:
+      summary: Actualizar una reserva existente
+      description: Modifica una reserva ya registrada.
+      tags: [Reservas]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Booking"
+      responses:
+        "200":
+          description: Reserva actualizada correctamente
+        "404":
+          description: Reserva no encontrada
+
+    delete:
+      summary: Eliminar una reserva
+      description: Elimina una reserva existente del sistema.
+      tags: [Reservas]
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Reserva eliminada correctamente
+        "404":
+          description: Reserva no encontrada
+
+components:
+  schemas:
+    Booking:
+      type: object
+      required: [id, roomId, user, time, people]
+      properties:
+        id:
+          type: string
+        roomId:
+          type: string
+        user:
+          type: string
+        time:
+          type: string
+          format: date-time
+        people:
+          type: integer
