@@ -12,7 +12,7 @@ Este proyecto consiste en el desarrollo de una API REST utilizando **Node.js** c
 - Cancelación de reservas (`DELETE /bookings/:id`)
 - Documentación automática con Swagger (OpenAPI 3.0)
 
-## Instrucciones para Ejecutar el Proyecto
+## Instrucciones para ejecutar la API
 
 1. Clonar el repositorio `git clone https://github.com/tu-usuario/node-study-room-booking-api.git`
 2. Ir al directorio del proyecto `cd node-study-room-booking-api`
