@@ -1,12 +1,10 @@
-// src/domain/booking/service/booking-service.ts
-
 import { writeFile } from "fs/promises";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
-import { loadJsonFile } from "../../../utils/data-loader.js";
-import { getRoomDataService } from "../../room/service/room-service.js";
-import { Booking } from "../model/booking-model.js";
-import { canCreateBooking } from "../validators/booking-validator.js";
+import { loadJsonFile } from "../../../utils/data-loader";
+import { getRoomDataService } from "../../room/service/room-service";
+import { Booking } from "../model/booking-model";
+import { canCreateBooking } from "../validators/booking-validator";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

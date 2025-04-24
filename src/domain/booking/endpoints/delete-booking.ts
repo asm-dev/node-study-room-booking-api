@@ -2,8 +2,8 @@ import { ServerResponse } from "http";
 import {
   sendErrorResponse,
   sendJsonResponse,
-} from "../../../utils/http-response-handler.js";
-import { deleteBooking } from "../service/booking-service.js";
+} from "../../../utils/http-response-handler";
+import { deleteBooking } from "../service/booking-service";
 
 export async function deleteBookingEndpoint(
   res: ServerResponse,

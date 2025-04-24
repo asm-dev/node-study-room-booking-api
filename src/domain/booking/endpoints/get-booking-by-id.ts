@@ -2,8 +2,8 @@ import { ServerResponse } from "http";
 import {
   sendErrorResponse,
   sendJsonResponse,
-} from "../../../utils/http-response-handler.js";
-import { getBookingById } from "../service/booking-service.js";
+} from "../../../utils/http-response-handler";
+import { getBookingById } from "../service/booking-service";
 
 export async function getBookingByIdEndpoint(
   res: ServerResponse,

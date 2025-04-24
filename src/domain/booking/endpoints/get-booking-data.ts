@@ -2,8 +2,8 @@ import { ServerResponse } from "http";
 import {
   sendErrorResponse,
   sendJsonResponse,
-} from "../../../utils/http-response-handler.js";
-import { getAllBookings } from "../service/booking-service.js";
+} from "../../../utils/http-response-handler";
+import { getAllBookings } from "../service/booking-service";
 
 export async function getBookingData(res: ServerResponse): Promise<void> {
   try {

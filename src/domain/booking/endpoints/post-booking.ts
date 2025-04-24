@@ -2,8 +2,8 @@ import { IncomingMessage, ServerResponse } from "http";
 import {
   sendErrorResponse,
   sendJsonResponse,
-} from "../../../utils/http-response-handler.js";
-import { createBooking } from "../service/booking-service.js";
+} from "../../../utils/http-response-handler";
+import { createBooking } from "../service/booking-service";
 
 export async function postBooking(
   req: IncomingMessage,

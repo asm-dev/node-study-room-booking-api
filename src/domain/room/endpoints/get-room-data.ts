@@ -1,13 +1,12 @@
 import { ServerResponse } from "http";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
-
-import { loadJsonFile } from "../../../utils/data-loader.js";
+import { loadJsonFile } from "../../../utils/data-loader";
 import {
   sendErrorResponse,
   sendJsonResponse,
-} from "../../../utils/http-response-handler.js";
-import { Room } from "../model/room-model.js";
+} from "../../../utils/http-response-handler";
+import { Room } from "../model/room-model";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);

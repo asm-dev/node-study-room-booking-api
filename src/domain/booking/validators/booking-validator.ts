@@ -1,5 +1,5 @@
-import { Room } from "../../room/model/room-model.js";
-import { Booking } from "../model/booking-model.js";
+import { Room } from "../../room/model/room-model";
+import { Booking } from "../model/booking-model";
 
 export function isValidBooking(booking: Partial<Booking>): booking is Booking {
   return (
