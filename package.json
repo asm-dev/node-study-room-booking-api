@@ -1,0 +1,30 @@
+{
+  "name": "study-room-booking-api",
+  "version": "1.0.0",
+  "description": "API REST con Node.js para la gestión de reserva de salas de estudio en una biblioteca ficticia",
+  "main": "dist/server.js",
+  "scripts": {
+    "build": "tsup src/server.ts --format esm --out-dir dist --clean",
+    "start": "node dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asm-dev/node-study-room-booking-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/asm-dev/node-study-room-booking-api/issues"
+  },
+  "homepage": "https://github.com/asm-dev/node-study-room-booking-api#readme",
+  "dependencies": {
+    "swagger-jsdoc": "^6.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}
