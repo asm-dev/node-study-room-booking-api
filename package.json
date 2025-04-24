@@ -4,8 +4,9 @@
   "description": "API REST con Node.js para la gestión de reserva de salas de estudio en una biblioteca ficticia",
   "main": "dist/server.js",
   "scripts": {
-    "build": "tsup src/server.ts --format esm --out-dir dist --clean",
-    "start": "node dist/server.js"
+    "build": "tsc && node dist/scripts/copy-static.js",
+    "start": "node dist/server.js",
+    "clean": "rm -rf dist"
   },
   "repository": {
     "type": "git",

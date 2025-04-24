@@ -1,0 +1,16 @@
+[
+  {
+    "id": "booking1",
+    "roomId": "room1",
+    "user": "Juan Pérez",
+    "time": "2025-04-25T10:00:00",
+    "people": 3
+  },
+  {
+    "id": "booking2",
+    "roomId": "room2",
+    "user": "Laura Martínez",
+    "time": "2025-04-25T12:00:00",
+    "people": 2
+  }
+]

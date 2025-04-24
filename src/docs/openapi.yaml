@@ -1,0 +1,67 @@
+openapi: 3.0.0
+info:
+  title: API de reservas de salas de estudio
+  version: 1.0.0
+  description: API para gestionar la disponibilidad y reservas de salas en una biblioteca o espacio de coworking.
+servers:
+  - url: http://localhost:3000
+    description: Servidor de desarrollo
+
+paths:
+  /rooms:
+    get:
+      summary: Obtener todas las salas disponibles
+      description: Devuelve la lista de salas de estudio disponibles en la biblioteca.
+      tags:
+        - Salas
+      responses:
+        "200":
+          description: Lista de salas disponibles de la biblioteca
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      description: Identificador único de la sala
+                    name:
+                      type: string
+                      description: Nombre de la sala
+                    capacity:
+                      type: integer
+                      description: Capacidad máxima de personas
+
+  /reservations:
+    get:
+      summary: Obtener todas las reservas activas
+      description: Devuelve una lista de todas las reservas actuales registradas en el sistema.
+      tags:
+        - Reservas
+      responses:
+        "200":
+          description: Lista de reservas activas en el sistema
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      description: Identificador único de la reserva
+                    roomId:
+                      type: string
+                      description: ID de la sala reservada
+                    user:
+                      type: string
+                      description: Nombre del usuario que ha hecho la reserva
+                    time:
+                      type: string
+                      description: Fecha y hora de la reserva (ISO 8601)
+                    people:
+                      type: integer
+                      description: Número de personas para la reserva
