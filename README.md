@@ -1,4 +1,4 @@
-# API REST para Reserva de Salas de Estudio
+# API REST de reserva de salas de estudio
 
 Este proyecto consiste en el desarrollo de una API REST utilizando **Node.js** como tal, es decir, sin frameworks tales como Express. Esta API permite gestionar las reservas de salas en una biblioteca o espacio de coworking. La aplicación está diseñada siguiendo principios de arquitectura limpia, separando responsabilidades en dominios, servicios, validadores y endpoints.
 
