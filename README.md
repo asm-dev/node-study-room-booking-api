@@ -1,37 +1,37 @@
-# API REST de reserva de salas de estudio
+# Study room booking REST API
 
-Este proyecto consiste en el desarrollo de una API REST utilizando **Node.js** como tal, es decir, sin frameworks tales como Express. Esta API permite gestionar las reservas de salas en una biblioteca o espacio de coworking. La aplicación está diseñada siguiendo principios de arquitectura limpia, separando responsabilidades en dominios, servicios, validadores y endpoints.
+This project consists of developing a REST API using plain **Node.js**, that is, without frameworks such as Express. This API allows managing room bookings in a library or coworking space. The application is designed following clean architecture principles, separating responsibilities into domains, services, validators and endpoints.
 
-## Principales funcionalidades
+## Main features
 
-- Listado de salas disponibles (`GET /rooms`)
-- Consulta de todas las reservas (`GET /bookings`)
-- Consulta de una reserva específica (`GET /bookings/:id`)
-- Creación de reservas (`POST /bookings`)
-- Modificación de reservas (`PUT /bookings/:id`)
-- Cancelación de reservas (`DELETE /bookings/:id`)
-- Documentación automática con Swagger (OpenAPI 3.0)
+- List of available rooms (`GET /rooms`)
+- Retrieve all bookings (`GET /bookings`)
+- Retrieve a specific booking (`GET /bookings/:id`)
+- Create bookings (`POST /bookings`)
+- Update bookings (`PUT /bookings/:id`)
+- Cancel bookings (`DELETE /bookings/:id`)
+- Automatic documentation with Swagger (OpenAPI 3.0)
 
-## Instrucciones para ejecutar la API
+## Instructions to run the API
 
-1. Clonar el repositorio `git clone https://github.com/tu-usuario/node-study-room-booking-api.git`
-2. Ir al directorio del proyecto `cd node-study-room-booking-api`
-3. Instalar dependencias `npm install`
-4. Compilar TS `npm run build`
-5. Levantar el servidor `npm start`
+1. Clone the repository `git clone https://github.com/tu-usuario/node-study-room-booking-api.git`
+2. Go to the project directory `cd node-study-room-booking-api`
+3. Install dependencies `npm install`
+4. Compile TS `npm run build`
+5. Start the server `npm start`
 
-> El servidor quedará disponible en: `http://localhost:3000`
-> (Opcional) Para ver la documentación del Swagger puedes copiar la URL `http://localhost:3000/docs/swagger.json` en este [visualizador online](https://editor.swagger.io/) Swagger UI.
+> The server will be available at: `http://localhost:3000`
+> (Optional) To view the Swagger documentation you can copy the URL `http://localhost:3000/docs/swagger.json` into this [online viewer](https://editor.swagger.io/) Swagger UI.
 
-## Reflexiones sobre el desarrollo
+## Reflections on the development
 
-Este proyecto ha sido una gran oportunidad para consolidar conocimientos clave de desarrollo backend:
+This project has been a great opportunity to consolidate key backend development knowledge:
 
-- Entendimiento profundo de cómo funcionan los servidores HTTP a bajo nivel con Node.js
-- Uso de `fs/promises` para persistencia de datos en archivos
-- Principios de diseño limpio: separación de lógica en endpoints, servicios y validadores
-- Validaciones de negocio reales (capacidad de salas, conflictos de horario)
-- Generación de documentación con Swagger/OpenAPI desde comentarios en código
-- Modularización de código para facilitar escalabilidad y mantenimiento
+- Deep understanding of how HTTP servers work at a low level with Node.js
+- Use of `fs/promises` for data persistence in files
+- Clean design principles: separation of logic into endpoints, services and validators
+- Real business validations (room capacity, schedule conflicts)
+- Documentation generation with Swagger/OpenAPI from code comments
+- Code modularization to facilitate scalability and maintenance
 
-Todo ello sin frameworks adicionales, lo que me ha permitido apreciar lo que hacen por debajo herramientas como Express, y sobre todo ganar comprensión real de cómo se estructura una API desde cero.
+All of this without additional frameworks, which has allowed me to appreciate what tools like Express do under the hood, and above all to gain a real understanding of how an API is structured from scratch.
